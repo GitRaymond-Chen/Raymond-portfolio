@@ -366,20 +366,61 @@ h6 {
 }
 
 @media screen and (max-width: 800px) {
-  .intro-wrapper {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "nav-wrapper"
-      "left-column"
-      "right-column";
+  #content {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
   }
 
-  .right-column {
+  #canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .main-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .intro-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav-wrapper {
+    order: 1;
+    width: 100%;
+  }
+
+  .left-column {
+    order: 2;
+    width: 100%;
+    display: flex;
     justify-content: center;
   }
 
-  .main-containert {
-    width: 10px;
+  .right-column {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #profile_pic {
+    width: 200px;
+    height: auto;
+  }
+
+  #preview-shadow {
+    max-width: 90%;
   }
 }
 
